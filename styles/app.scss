@@ -1,0 +1,109 @@
+@import "./mixin.scss";
+$BLACK: #000;
+$White: #fff;
+$grays: rgba(128, 128, 128, 0.43);
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: antiquewhite;
+}
+.header {
+  @include flexs(space-around);
+  height: 10vh;
+  background: $BLACK;
+  h2 {
+    color: $White;
+  }
+}
+
+a {
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  color: $White;
+  &:hover {
+    background-color: $grays;
+  }
+}
+
+.btn {
+  all: unset;
+  color: $White;
+  padding: 0.4rem 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: $grays;
+  }
+}
+
+form {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  input {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    box-shadow: 1px 1px 10px rgba(149, 149, 149, 0.451);
+    margin: 10px;
+    border: none;
+    &::placeholder {
+      color: rgba(128, 128, 128, 0.51);
+    }
+  }
+  a {
+    all: unset;
+    width: 30%;
+    margin: 10px auto;
+    &:hover {
+      background-color: transparent;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  p {
+    text-align: center;
+  }
+}
+.loginBTN {
+  background-color: $BLACK;
+  padding: 0.7rem 2rem;
+  color: $White;
+  width: 30%;
+  margin: 1rem auto;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.container {
+  max-width: 60%;
+  margin: 0 auto;
+}
+.item {
+  width: 60%;
+  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.43);
+  border-radius: 7px;
+  color: rgba(128, 128, 128, 0.707);
+  margin: 0 auto;
+  background: $White;
+  padding: 1rem 2rem;
+  @include flexs(space-between);
+  .title {
+    font-weight: 600;
+  }
+  .des {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  .check {
+    color: #000;
+  }
+}
+
+.Delete {
+  @include btns(white, #000);
+  border-radius: 20px;
+  margin-left: 15px;
+}

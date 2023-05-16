@@ -1,0 +1,13 @@
+@mixin flexs($just) {
+  display: flex;
+  justify-content: $just;
+  align-items: center;
+}
+
+@mixin btns($color , $bgc) {
+    all: unset;
+    color: $color;
+    padding: 0.4rem 1rem;
+    background-color: $bgc;
+    cursor: pointer;
+  }
