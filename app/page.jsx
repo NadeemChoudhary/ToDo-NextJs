@@ -7,6 +7,7 @@ const page = () => {
     <Form />
     <section>
         <TodoItem title={"Sample title"} description={"dljjfhj csbu "} id={"sampleID"} complete={true}/>
+        <TodoItem title={"Sample title"} description={"dljjfhj csbu "} id={"sampleID"} complete={true}/>
     </section>
  </div>
   )

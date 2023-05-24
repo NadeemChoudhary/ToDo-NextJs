@@ -86,11 +86,14 @@ form {
   box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.43);
   border-radius: 7px;
   color: rgba(128, 128, 128, 0.707);
-  margin: 0 auto;
+  margin: 1rem auto;
   background: $White;
   padding: 1rem 2rem;
+  &:first-child {
+    margin: 0 auto;
+  }
   @include flexs(space-between);
-  .title {
+  .title { 
     font-weight: 600;
   }
   .des {
