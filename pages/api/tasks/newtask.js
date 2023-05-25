@@ -1,4 +1,6 @@
 import { DB } from "@/DB/DataBase";
+import { CheckAuth } from "@/middlewares/CheckAuth";
+import { Errors } from "@/middlewares/error";
 import { TasksModel } from "@/models/Task";
 import mongoose from "mongoose";
 
@@ -10,10 +12,12 @@ const newtask = async (req, res) => {
     });
   const { title, description } = req.body;
   await DB();
+  const user = await CheckAuth(req);
+  if (!user) return Errors(res, 401, "Please login First");
   await TasksModel.create({
     title,
     description,
-    user: new mongoose.Types.ObjectId("646c500a339c7652c40135b6"),
+    user: user._id,
   }).then((result) => {
     res.status(201).json({
       success: true,
